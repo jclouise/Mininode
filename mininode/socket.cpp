@@ -46,7 +46,7 @@ void Socket::write(Data data) const {
 	int totalToSend = content.size();
 	int currentPosition = 0;
 
-	while((currentPosition < totalToSend) && currentPosition !=-1) {
+	while(currentPosition < totalToSend) {
 
 		int bufferContentSize = std::min(4096, totalToSend - currentPosition);
 		content.copy(writebuffer, bufferContentSize, currentPosition);
